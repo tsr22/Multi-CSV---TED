@@ -15,9 +15,13 @@ var seconds = [];
 var minute = [];
 var hours = [];
 var days = [];
-var test = [];
+var commaSplit = [];
 var xhttp = new XMLHttpRequest();
 var csvResults = [];
+var temp = [];
+
+temp = 'Dates.csv';
+
 
 xhttp.onreadystatechange = function ()
 {
@@ -27,9 +31,9 @@ xhttp.onreadystatechange = function ()
     newline = csvData.split("\n");
     for(let i = 0; i < newline.length;i++)
     {
-      test[i] = newline[i].split(",");
+      commaSplit[i] = newline[i].split(",");
     }
-    csvResults =[].concat(...test)
+    csvResults =[].concat(...commaSplit)
 
     for(let i = 0; i<csvResults.length;i++)
     {
@@ -52,14 +56,12 @@ xhttp.onreadystatechange = function ()
     {
       projectNames.push(projectNamesTemp[i]);
     }
-
-    console.log(projectNames);
   }
 }
-
-xhttp.open("get", "dates.csv");
-xhttp.send();
-
+var switchCounter = 1;
+//xhttp.open("get", temp);
+//xhttp.send();
+console.log(switchCounter);
 function addItem(container, template) {
      
     var now = new Date();
@@ -90,7 +92,7 @@ function update()
   for(let i=0; i < endDates.length; i++) 
   { 
     container.html("");
-    addItem(container, tmpl); 
+    addItem(container, tmpl);
   }
 }
 
@@ -100,8 +102,30 @@ $(() => {
 
   for(let i=0; i < endDates.length; i++) 
   { 
+    container.html("");
     addItem(container, tmpl); 
   }
 });
 
 timer = setInterval(update,1000);
+
+$(document).ready(function(){
+  setInterval(
+              function () {
+                  if(switchCounter == 0)
+                  {
+                    xhttp.open("get", temp);
+                    xhttp.send();
+                    switchCounter++;
+                  }
+                  else
+                  {
+                    xhttp.open("get", "dates2.csv");
+                    xhttp.send();
+                    switchCounter=0;
+                  }
+              },
+              6000);
+  });
+
+  
