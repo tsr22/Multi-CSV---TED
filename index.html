@@ -1,0 +1,42 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" href="style.css">
+<div id="app" class="container">
+</div>
+
+
+
+
+<body>
+  <h1>Countdown until Open </h1>
+  <div class="countdown-timer"></div>
+  <div class="message"></div>
+  <div class="dateToOpen"></div>
+  <div class="bottomText"></div>
+  
+  
+
+
+  <div class="curProjects">
+    Ongoing Projects:
+  </div>
+  <template id="item_template">
+    <div class="item">
+      {{project}}: {{ num }}d Remaning
+    </div>
+  </template>
+
+
+<script src="ongoingProjects.js"></script>
+<script src="countdown.js"></script>
+<script src="mainTimer.js"></script>
+</body>
+</html>
