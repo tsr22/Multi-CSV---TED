@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+  --primary-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  /* background */
+  background-image: url('Images/frontrender.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center center;
+  color: var(--primary-color);
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 20px;
+  overflow: hidden;
+
+}
+
+h1 {
+  font-size: 60px;
+  margin: -300px 0 40px;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  font-family:Cambria;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.25);
+  color:white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  font-size: 1.8rem;
+  top: 30%;
+  left: 8%;
+  position: absolute;
+  width: max-content;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-auto-columns: minmax(1px, 1fr);
+  grid-auto-flow: row;
+  grid-row-gap: .3em;
+  grid-column-gap: .5em;
+
+}
+
+.curProjects{
+  color:white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  font-size: 2rem;
+  top: 25%;
+  left: 8%;
+  position: absolute;
+}
+.count-down {
+  color:white;
+  text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family:Cambria;
+  top: 0;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+.timer h2 {
+  margin: -95 0 20px;
+  font-size: 4rem;
+}
+
+.message {
+  font-size: 60px;
+  font-size: bold;
+}
+
+small {
+  padding-top: 5px;
+  font-size: 1.8rem;
+  margin: -60 -0 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.bottomText {
+  font-size: 2vw;
+  z-index: -1;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.dateToOpen {
+  font-size: 2vw;
+  z-index: -1;
+  position: absolute;
+  opacity: 0.5;
+  top:42%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
