@@ -59,8 +59,8 @@ xhttp.onreadystatechange = function ()
   }
 }
 var switchCounter = 1;
-//xhttp.open("get", temp);
-//xhttp.send();
+xhttp.open("get", temp);
+xhttp.send();
 console.log(switchCounter);
 function addItem(container, template) {
      
@@ -108,7 +108,7 @@ $(() => {
 });
 
 timer = setInterval(update,1000);
-
+/*
 $(document).ready(function(){
   setInterval(
               function () {
@@ -127,5 +127,5 @@ $(document).ready(function(){
               },
               6000);
   });
-
+*/
   
