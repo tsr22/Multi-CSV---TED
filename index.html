@@ -1,32 +1,173 @@
 <html>
+<head>
+<!-- <link rel="stylesheet" href="style.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
-<head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<link rel="stylesheet" href="style.css">
-<div id="app" class="container1"></div>
-<div id="app" class="container2"></div>
-<body>
-  <h1>Countdown until Open </h1>
-  <div class="countdown-timer"></div>
-  <div class="message"></div>
-  <div class="dateToOpen"></div>
-  <div class="bottomText"></div>
-  
-  <div class="curProjects">
-    Ongoing Projects:
-  </div>
-  <template id="item_template">
-    <div class="item">
-      {{project}}: {{ num }}d Remaning
-    </div>
-  </template>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+	font-family: 'Alata', sans-serif;
+	font-size: 16px;
+	background-color:black;
+	color:white;
+	background-image: url('Images/frontrender.jpg');
+	background-size:cover;
+	text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
 
+.column {
+	float: left;
+	height: 93%;
+	width: 25%;
+	padding: 20px;
+	background-color:rgba(0,0,0,0.5) !important;
+	border-radius: 16px;
+	padding-bottom: 30px;
+}
+
+.columnMid {
+	float: left;
+	width: 50%;
+	padding: 90px 10px 10px 10px;
+	text-align:center;
+	font-size: 32px;
+}
+
+.columnMid h1 {
+	padding-bottom:0px;
+	margin-bottom:0px;
+}
+
+.columnR {
+	float: right;
+	height: 93%;
+	width: 25%;
+	padding: 20px;
+	background-color:rgba(0,0,0,0.5) !important;
+	border-radius: 16px;
+	padding-bottom: 30px;
+}
+
+.columnR p {
+	text-align: right;
+	float: right;
+}
+
+.columnR h1 {
+	text-align: right;
+	font-size: 24px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.item {
+	font-size: 22px;
+}
+
+.ongoing_proj {
+	font-size: 24px;
+}
+
+.message {
+  font-size: 60px;
+  font-size: bold;
+}
+
+.bottomText {
+	background-color:rgba(0,0,0,0.7) !important;
+	font-size: 30px;
+	opacity: 1;
+	margin: 0;
+}
+
+.dateToOpen {
+	padding-top: 30px;
+	font-size: 25px;
+	opacity: 1;
+	margin: 0;
+}
+
+.dateToOpen::before {
+	content: "Opens on ";
+}
+
+.timer {
+	display: inline-block !important;
+	margin: 0;
+}
+
+.timer h2 {
+	font-size: 64px;
+	padding: 0px 30px 0px 30px;
+}
+
+small {
+  padding-top: 5px;
+  font-size: 16px;
+  margin: -60 -0 0px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.countdown-timer {
+	margin-top:-40px;
+}
+
+.bottomText {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.hrS {
+opacity: .2;
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column">
+<p class="ongoing_proj">Ongoing Projects:</p>
+<hr class="hrS">
+<div id="app0" class="container1"></div>
+<div id="app1" class="container2"></div>
+<div id="app2" class="container3"></div>
+<template id="item_template0">
+	<div class="item">
+		{{project}}: {{ num }}d Remaining
+	</div>
+</template>
+</div>
+ 
+<div class="columnMid">
+<h1>Countdown until Open</h1>
+<div class="countdown-timer"></div>
+<div class="message"></div>
+<div class="dateToOpen"></div>
+<div class="bottomText"></div>
+</div>
+
+<div class="columnR">
+<h1>Placeholder Right Column</h1>
+<hr class="hrS">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi efficitur pellentesque lacus in sollicitudin. Fusce laoreet augue ipsum, ac consectetur mi convallis elementum. In ac sollicitudin nunc, non commodo lacus. In suscipit auctor tempor.<br><br>Quisque vitae posuere lorem. Aenean mollis porttitor commodo. Morbi vel interdum nibh. Nulla posuere felis et rutrum facilisis. Donec at mauris lobortis, maximus ante quis, bibendum eros. Fusce malesuada felis sed arcu eleifend, ac commodo orci elementum. Integer eget risus libero.</p>
+</div>
+</div>
 
 <script src="ongoingProjects.js"></script>
 <script src="countdown.js"></script>
